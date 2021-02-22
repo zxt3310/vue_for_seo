@@ -162,7 +162,6 @@
 
 	<footerr></footerr>
 
-	
   </div>
 </template>
 
@@ -178,8 +177,10 @@ export default {
 	},
 	components:{
 		"footerr":footerr
+	},
+	methods:{
+		
 	}
-  
 };
 </script>
 <style>

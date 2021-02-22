@@ -5,12 +5,18 @@
 	  <router-link to="/service">产品服务</router-link> 
       <router-link to="/about">关于我们</router-link> 
 	  <router-link to="/download">下载中心</router-link>
-	  <button class="btn btn-default">登录</button>
+	  <a href="login.html">
+		  <button class="btn btn-default">登录</button>
+	  </a>
+	  
 	  <button class="btn btn-default">注册</button>
     </div>
     <router-view />
   </div>
 </template>
+<script>
+	
+</script>
 
 <style>
 #app {

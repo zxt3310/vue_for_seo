@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="">
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+   <title><%= htmlWebpackPlugin.options.title %></title>
+ </head>
+  <body>
+    <div id="page">
+		<div id="login">
+			<form class="login" onsubmit="">
+				<div>喧歌账户登录</div>
+				<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="basic-addon1">
+					  <span class="glyphicon glyphicon-user"></span>
+				  </span>
+				  <input id="username" type="text" class="form-control" placeholder="手机号/邮箱" aria-describedby="basic-addon1">
+				</div>
+				
+				<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="basic-addon1">
+					  <span class="glyphicon glyphicon-send"></span>
+				  </span>
+				  <input type="password" id="password" type="text" class="form-control" placeholder="密码" aria-describedby="basic-addon2">
+				</div>
+				
+				<div>
+					<input type="button" class="btn btn-primary btn-lg" onclick="startlogin()" value="立即登录">
+				</div>
+			</form>
+		</div>
+	</div>
+    
+  </body>
+  <script type="text/javascript">
+	 function startlogin(){
+		 var username = $("#username").val();
+		 if(!username){
+			 alert("输入用户名");
+			 return;
+		 }
+		 var password = $("#password").val();
+		 if(password.length<6){
+			 alert("密码必须大于6位");
+			 return;
+		 }
+		 // $.ajax({
+			//  type:"GET",
+			//  url:"https://www.baidu.com",
+			//  success:function(e){
+			// 	 console.log(e)
+			//  },
+			//  error:function(e){
+			// 	 console.log(e)
+			//  }
+		 // })
+		 $.getJSON("https://www.baidu.com",null,function(e){
+				console.log(e);
+		 })
+	 }
+  </script>
+  <style>
+	html{
+		background-color: #364AE6;
+	}
+	#login{
+		float: right;
+		padding: 8%;
+	}
+	.login{
+		width: 45rem;
+		background-color: #FFFFFF;
+		padding: 3rem;
+	}
+	.login div{
+		margin-bottom: 3rem;
+		font-size: 20px;
+	}
+	.login input{
+		width: 100%;
+	}
+  </style>
+</html>
